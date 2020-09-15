@@ -1,11 +1,24 @@
 <template>
-    <div>
-        <Nuxt />
+    <div class="default-page">
+        <navbar />
+        <modal name="my-first-modal">
+            <h2>default</h2>
+        </modal>
+        <modal name="my-first-modal2">
+            <h2>default2</h2>
+        </modal>
+        <Nuxt class="container" />
     </div>
 </template>
+<script>
+import Navbar from '~/components/nav-bars/Navbar'
 
+export default {
+    components: { Navbar },
+}
+</script>
 <style>
-html {
+/*html {
     font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
         'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: 16px;
@@ -22,34 +35,5 @@ html {
 *::after {
     box-sizing: border-box;
     margin: 0;
-}
-
-.button--green {
-    display: inline-block;
-    border-radius: 4px;
-    border: 1px solid #3b8070;
-    color: #3b8070;
-    text-decoration: none;
-    padding: 10px 30px;
-}
-
-.button--green:hover {
-    color: #fff;
-    background-color: #3b8070;
-}
-
-.button--grey {
-    display: inline-block;
-    border-radius: 4px;
-    border: 1px solid #35495e;
-    color: #35495e;
-    text-decoration: none;
-    padding: 10px 30px;
-    margin-left: 15px;
-}
-
-.button--grey:hover {
-    color: #fff;
-    background-color: #35495e;
-}
+}*/
 </style>

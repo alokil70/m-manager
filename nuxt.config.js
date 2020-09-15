@@ -5,7 +5,7 @@ export default {
      ** Nuxt rendering mode
      ** See https://nuxtjs.org/api/configuration-mode
      */
-    mode: 'spa',
+    ssr: false,
     /*
      ** Nuxt target
      ** See https://nuxtjs.org/api/configuration-target
@@ -32,6 +32,10 @@ export default {
         link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     },
     loading: false,
+
+    router: {
+        middleware: ['auth'],
+    },
     /*
      ** Global CSS
      */
@@ -40,7 +44,10 @@ export default {
      ** Plugins to load before mounting the App
      ** https://nuxtjs.org/guide/plugins
      */
-    plugins: [],
+    plugins: [
+        { src: '~/plugins/vuelidate', mode: 'client' },
+        { src: '~/plugins/vue-modal', mode: 'client' },
+    ],
     /*
      ** Auto import components
      ** See https://nuxtjs.org/api/configuration-components
